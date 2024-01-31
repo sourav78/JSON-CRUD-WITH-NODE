@@ -1,0 +1,34 @@
+[
+    [
+        {
+            "name": "Mobile",
+            "stock": 5,
+            "ratting": 4,
+            "category": "Electronics"
+        },
+        {
+            "name": "AC",
+            "stock": 7,
+            "ratting": 3,
+            "category": "Electronics"
+        },
+        {
+            "name": "Shoes",
+            "stock": 10,
+            "ratting": 4,
+            "category": "Shoes"
+        },
+        {
+            "name": "Vibrator",
+            "stock": 2,
+            "ratting": 5,
+            "category": "Electronics"
+        },
+        {
+            "name": "mouse",
+            "stock": "7",
+            "ratting": "5",
+            "category": "gadget"
+        }
+    ]
+]
