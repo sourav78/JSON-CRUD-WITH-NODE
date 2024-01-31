@@ -3,42 +3,49 @@
         "name": "Mobile",
         "stock": 5,
         "ratting": 4,
-        "category": "Electronics"
+        "category": "Electronics",
+        "price": 20000
     },
     {
         "name": "AC",
         "stock": 7,
         "ratting": 3,
-        "category": "Electronics"
+        "category": "Electronics",
+        "price": 40000
     },
     {
         "name": "Shoes",
-        "stock": 10,
+        "stock": 9,
         "ratting": 4,
-        "category": "Shoes"
+        "category": "Shoes",
+        "price": 2000
     },
     {
         "name": "Vibrator",
         "stock": 2,
         "ratting": 5,
-        "category": "Electronics"
+        "category": "Electronics",
+        "price": 4000
     },
     {
         "name": "Bike",
-        "stock": "1",
+        "stock": 0,
         "ratting": "5",
-        "category": "Bike"
+        "category": "Bike",
+        "price": 200000
     },
     {
         "name": "Jet",
         "stock": "1",
         "ratting": "5",
-        "category": "Plane"
+        "category": "Plane",
+        "price": 15843000000
     },
     {
         "name": "mouse",
         "stock": "20",
         "ratting": "3.5",
-        "category": "Gadget"
+        "category": "Gadget",
+        "price": 3500
     }
 ]
