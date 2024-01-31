@@ -47,5 +47,12 @@
         "ratting": "3.5",
         "category": "Gadget",
         "price": 3500
+    },
+    {
+        "name": "Chocolate",
+        "stock": 1995,
+        "ratting": "4",
+        "category": "Food",
+        "price": 2
     }
 ]

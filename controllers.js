@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { saveIntoFiles } from './saveIntoFile.js';
 
 let Products
 
@@ -38,14 +39,7 @@ const addProduct = (req, res) => {
     const newProduct = req.body
     Products.push(newProduct)
 
-    fs.writeFile('./mockdata.json', JSON.stringify(Products), (err) => {
-        if (err) {
-            console.log(err);
-            res.status(500).json({ status: "Error updating user product" });
-        } else {
-            res.json({ status: "User product updated", product: newProduct });
-        }
-    })
+    saveIntoFiles(res, Products, newProduct)
 
 }
 
@@ -60,15 +54,7 @@ const updateProduct = (req, res) => {
 
         return product
     })
-
-    fs.writeFile('./mockdata.json', JSON.stringify(updatedProducts), (err) => {
-        if (err) {
-            console.log(err);
-            res.status(500).json({ status: "Error updating product data" });
-        } else {
-            res.json({ status: "product data updated", product: updatedItem });
-        }
-    })
+    saveIntoFiles(res, updatedProducts, updatedItem)
 
 }
 
@@ -76,15 +62,7 @@ const deleteProduct = (req, res) => {
     const { name } = req.body
 
     let deletedProduct = Products.filter(product => product.name !== name)
-
-    fs.writeFile('./mockdata.json', JSON.stringify(deletedProduct), (err) => {
-        if (err) {
-            console.log(err);
-            res.status(500).json({ status: "Error updating product data" });
-        } else {
-            res.json({ status: "product data updated", product: name });
-        }
-    })
+    saveIntoFiles(res, deletedProduct, name)
 }
 
 const buyProduct = (req, res) => {
@@ -93,16 +71,8 @@ const buyProduct = (req, res) => {
     let buyProduct = Products.map(prod => {
         return prod.name === productName ? { ...prod, stock: Number(prod.stock) - 1 } : prod
     })
+    saveIntoFiles(res, buyProduct, productName)
 
-    fs.writeFile('./mockdata.json', JSON.stringify(buyProduct), (err) => {
-        if (err) {
-            console.log(err);
-            res.status(500).json({ status: "Error updating product data" });
-        } else {
-            res.json({ status: "product data updated", product: productName });
-        }
-    })
-    
 }
 
 export {
