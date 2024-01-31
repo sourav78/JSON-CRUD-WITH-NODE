@@ -25,7 +25,7 @@ const showProducts = (req, res) => {
 const addProduct = (req, res) => {
 
     const newProduct = req.body
-    Products = [...Products, newProduct]
+    Products.push(newProduct)
 
     fs.writeFile('./mockdata.json', JSON.stringify(Products), (err) => {
         if (err) {
@@ -38,4 +38,27 @@ const addProduct = (req, res) => {
 
 }
 
-export { addProduct, showProducts }
+const updateProduct = (req, res) => {
+
+    const { name, updatedItem } = req.body
+
+    let updatedProducts = Products.map((product) => {
+        if(product.name === name) {
+            return { ...product, ...updatedItem }
+        }
+
+        return product
+    })
+
+    fs.writeFile('./mockdata.json', JSON.stringify(updatedProducts), (err) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ status: "Error updating user data" });
+        } else {
+            res.json({ status: "User data updated", user: updatedItem });
+        }
+    })
+
+}
+
+export { addProduct, showProducts, updateProduct }

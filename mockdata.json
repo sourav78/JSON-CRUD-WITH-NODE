@@ -25,9 +25,9 @@
     },
     {
         "name": "mouse",
-        "stock": "7",
-        "ratting": "5",
-        "category": "gadget"
+        "stock": "20",
+        "ratting": "3.5",
+        "category": "electronic gadget"
     },
     {
         "name": "Bike",
