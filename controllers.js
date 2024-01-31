@@ -30,9 +30,9 @@ const addProduct = (req, res) => {
     fs.writeFile('./mockdata.json', JSON.stringify(Products), (err) => {
         if (err) {
             console.log(err);
-            res.status(500).json({ status: "Error updating user data" });
+            res.status(500).json({ status: "Error updating user product" });
         } else {
-            res.json({ status: "User data updated", user: newProduct });
+            res.json({ status: "User product updated", product: newProduct });
         }
     })
 
@@ -53,12 +53,32 @@ const updateProduct = (req, res) => {
     fs.writeFile('./mockdata.json', JSON.stringify(updatedProducts), (err) => {
         if (err) {
             console.log(err);
-            res.status(500).json({ status: "Error updating user data" });
+            res.status(500).json({ status: "Error updating product data" });
         } else {
-            res.json({ status: "User data updated", user: updatedItem });
+            res.json({ status: "product data updated", product: updatedItem });
         }
     })
 
 }
 
-export { addProduct, showProducts, updateProduct }
+const deleteProduct = (req, res) => {
+    const { name } = req.body
+
+    let deletedProduct = Products.filter(product => product.name !== name)
+
+    fs.writeFile('./mockdata.json', JSON.stringify(deletedProduct), (err) => {
+        if (err) {
+            console.log(err);
+            res.status(500).json({ status: "Error updating product data" });
+        } else {
+            res.json({ status: "product data updated", product: name });
+        }
+    })
+}
+
+export { 
+    addProduct, 
+    showProducts, 
+    updateProduct,
+    deleteProduct
+}

@@ -24,12 +24,6 @@
         "category": "Electronics"
     },
     {
-        "name": "mouse",
-        "stock": "20",
-        "ratting": "3.5",
-        "category": "electronic gadget"
-    },
-    {
         "name": "Bike",
         "stock": "1",
         "ratting": "5",
@@ -40,5 +34,11 @@
         "stock": "1",
         "ratting": "5",
         "category": "Plane"
+    },
+    {
+        "name": "mouse",
+        "stock": "20",
+        "ratting": "3.5",
+        "category": "Gadget"
     }
 ]

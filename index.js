@@ -1,6 +1,6 @@
 import express from "express";
 
-import { addProduct, showProducts, updateProduct } from "./controllers.js";
+import { addProduct, deleteProduct, showProducts, updateProduct } from "./controllers.js";
 
 const app = express()
 
@@ -11,6 +11,8 @@ app.get('/', showProducts)
 app.post("/add-product", addProduct)
 
 app.post("/update-product", updateProduct)
+
+app.post("/delete-product", deleteProduct)
 
 app.get("/buy/:productName", (req, res) => {
 
